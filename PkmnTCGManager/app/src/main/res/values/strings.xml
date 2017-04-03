@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PkmnTCGManager</string>
+    <string name="check_own">Own</string>
+    <string name="check_dmg">Dmg</string>
+</resources>
