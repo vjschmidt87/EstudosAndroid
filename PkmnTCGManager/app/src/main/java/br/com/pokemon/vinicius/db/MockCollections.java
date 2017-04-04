@@ -8,18 +8,21 @@ import java.util.ArrayList;
 
 public class MockCollections {
 
-    public static ArrayList<Card> cardArrayList;
+    private static ArrayList<Card> cardArrayList;
+    private static int idLoad = -1;
 
-    static {
-        if (cardArrayList == null || cardArrayList.size() == 0) {
+    public static ArrayList<Card> getCardList(int id) {
+        if (idLoad != id || cardArrayList == null || cardArrayList.size() == 0) {
+            idLoad = id;
             cardArrayList = new ArrayList<Card>();
             for (int i = 0; i < 40; i++) {
-                Card card = new Card(i, i % 3 == 0 ? true : false,
-                        i % 12 == 0 ? true : false, i + 1, "Card " + (i + 1),
-                        new Type(1, "Type"), new Rarity(1, "Rarity"));
+                Card card = new Card(i, i % 3 == 0 ? true : false, i % 12 == 0 ? true : false,
+                        i + 100, "Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card " + id + " " + (i + 1),
+                        new Type(1, "Type " + id), new Rarity(1, "Rarity " + id));
                 cardArrayList.add(card);
             }
         }
+        return cardArrayList;
     }
 
 }

@@ -22,7 +22,7 @@ public class CardFragment extends Fragment {
         if(savedInstanceState != null) {
             mCurrentPosition = savedInstanceState.getInt(ARG_POSITION);
         }
-        return inflater.inflate(R.layout.card_model, container, false);
+        return inflater.inflate(R.layout.card_list, container, false);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class CardFragment extends Fragment {
 
         Bundle args = getArguments();
         if(args != null) {
-            updateCollectionView(args.getInt(ARG_POSITION), R.id.card_name);
+            updateCollectionView(args.getInt(ARG_POSITION), R.id.card_list);
         } else if(mCurrentPosition != -1) {
             updateCollectionView(mCurrentPosition, R.id.card_name);
         }
@@ -56,16 +56,16 @@ public class CardFragment extends Fragment {
         }*/
 
         MainActivity.mCardListView = (ListView) getActivity().findViewById(R.id.card_list);
+//        MainActivity.mCardListView = (ListView) getActivity().findViewById(id);
 
-        if (MainActivity.mCardAdapter == null) {
-            MainActivity.mCardAdapter = new CardAdapter(MainActivity.context, R.layout.card_model, MockCollections.cardArrayList);
+       // if (MainActivity.mCardAdapter == null) {
+            MainActivity.mCardAdapter = new CardAdapter(MainActivity.context, R.layout.card_model, MockCollections.getCardList(position));
             MainActivity.mCardListView.setAdapter(MainActivity.mCardAdapter);
-        } else {
-            MainActivity.mCardAdapter.clear();
-            MainActivity.mCardAdapter.addAll(MockCollections.cardArrayList);
-            MainActivity.mCardAdapter.notifyDataSetChanged();
-        }
-        System.out.println(MockCollections.cardArrayList.size());
+//        } else {
+//            MainActivity.mCardAdapter.clear();
+//            MainActivity.mCardAdapter.addAll(MockCollections.getCardList(position));
+//            MainActivity.mCardAdapter.notifyDataSetChanged();
+//        }
 //        cursor.close();
 //        db.close();
 
