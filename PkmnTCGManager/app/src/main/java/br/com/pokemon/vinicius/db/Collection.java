@@ -2,12 +2,24 @@ package br.com.pokemon.vinicius.db;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.provider.BaseColumns;
 
 /**
  * Created by vinicius.schmidt on 30/03/2017.
  */
 
-public class Collection implements Parcelable {
+public class Collection implements Parcelable, BaseColumns {
+    public static final String TABLE = "collection";
+    public static final String COL_ICON = "icon";
+    public static final String COL_TOTAL_CARDS = "total_cards";
+    public static final String COL_NAME = "name";
+    public static final String COL_GENERATION = "generation";
+
+    public static final String CREATE_TABLE = "CREATE TABLE " + TABLE + "(" + _ID +
+            " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_ICON + " INTEGER NOT NULL, " +
+            COL_TOTAL_CARDS + " INTEGER NOT NULL, " + COL_NAME + " TEXT NOT NULL, "
+            + COL_GENERATION + " INTEGER NOT NULL);";
+
     public int id;
     public int icon;
     public int totalCards;

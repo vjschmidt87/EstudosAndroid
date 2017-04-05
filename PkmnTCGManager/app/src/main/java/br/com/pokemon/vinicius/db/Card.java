@@ -2,12 +2,29 @@ package br.com.pokemon.vinicius.db;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.provider.BaseColumns;
 
 /**
  * Created by vinicius.schmidt on 03/04/2017.
  */
 
-public class Card implements Parcelable {
+public class Card implements Parcelable, BaseColumns {
+    public static final String TABLE = "card";
+    public static final String COL_OWN = "own";
+    public static final String COL_DAMAGED = "damaged";
+    public static final String COL_NUMBER = "number";
+    public static final String COL_NAME = "name";
+    public static final String COL_TYPE = "type";
+    public static final String COL_RARITY = "rarity";
+
+    public static final String CREATE_TABLE = "CREATE TABLE " + TABLE + "(" + _ID +
+            " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_OWN + " INTEGER NOT NULL, " +
+            COL_DAMAGED + " INTEGER NOT NULL, " + COL_NUMBER + " INTEGER NOT NULL, " +
+            COL_NAME + " TEXT NOT NULL, " + COL_TYPE + " INTEGER NOT NULL, " +
+            COL_RARITY + " INTEGER NOT NULL, FOREIGN KEY(" + Card.COL_TYPE + ") REFERENCES " +
+            Type.TABLE + "(" + Type._ID +"), FOREIGN KEY(" + Card.COL_RARITY + ") REFERENCES " +
+            Rarity.TABLE + "(" + Rarity._ID +"));";
+
     public int id;
     public boolean own = false;
     public boolean dmg = false;
