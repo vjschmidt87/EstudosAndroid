@@ -44,6 +44,8 @@ public class CardFragment extends Fragment {
     }
 
     public void updateCollectionView(int position, int id) {
+
+
         //SQLiteDatabase db = mHelper.getReadableDatabase();
         //query(tableName, tableColumns, whereClause, whereArgs, groupBy, having, orderBy);
         //Cursor cursor = db.query(TaskEntry.TABLE, null, null, null, null, null, null);

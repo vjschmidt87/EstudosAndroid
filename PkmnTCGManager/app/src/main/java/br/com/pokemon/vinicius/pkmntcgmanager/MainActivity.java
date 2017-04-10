@@ -13,7 +13,7 @@ public class MainActivity extends FragmentActivity implements OnCollectionSelect
 
     private static final String TAG = "MainActivity";
 
-    private TCGDBHelper mHelper;
+    public static TCGDBHelper mHelper;
     public static ListView mCardListView;
     public static CardAdapter mCardAdapter;
     public static Context context;

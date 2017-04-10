@@ -13,6 +13,9 @@ public class Rarity implements BaseColumns {
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE + "(" + _ID +
                 " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_NAME + " TEXT NOT NULL);";
 
+    public static final String POPULATE_TABLE = "INSERT INTO " + TABLE + " (" + COL_NAME + ") VALUES ('Common'), " +
+            "('Uncommon'), ('Rare'), ('Rare Holo'), ('Ultra Rare'), ('Secret Rare'), ('Hyper Rare');";
+
     public int id;
     public String name;
 

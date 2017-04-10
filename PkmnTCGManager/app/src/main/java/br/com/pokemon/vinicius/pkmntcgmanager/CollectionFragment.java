@@ -1,9 +1,12 @@
 package br.com.pokemon.vinicius.pkmntcgmanager;
 
 import android.app.Activity;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -12,12 +15,14 @@ import java.util.ArrayList;
 
 import br.com.pokemon.vinicius.db.Card;
 import br.com.pokemon.vinicius.db.Collection;
+import br.com.pokemon.vinicius.db.TCGDBHelper;
 
 /**
  * Created by vinicius.schmidt on 03/04/2017.
  */
 
 public class CollectionFragment extends ListFragment {
+    private static final String TAG = "CollectionFragment";
     OnCollectionSelectedListener mCallback;
     ArrayList<Collection> collectionList;
 
@@ -26,17 +31,25 @@ public class CollectionFragment extends ListFragment {
         super.onCreate(savedInstanceState);
         collectionList = new ArrayList<Collection>();
 
-
-        for(int i = 1; i <= 20; i++) {
-            Collection collection = new Collection(i, i, i * 2, "Collection " + i, i);
+        SQLiteDatabase db = MainActivity.mHelper.getReadableDatabase();
+        //query(tableName, tableColumns, whereClause, whereArgs, groupBy, having, orderBy);
+        Cursor cursor = db.query(Collection.TABLE, null, null, null, null, null, null);
+        while (cursor.moveToNext()) {
+            Collection collection = new Collection (cursor.getInt(cursor.getColumnIndex(Collection._ID)),
+                    cursor.getInt(cursor.getColumnIndex(Collection.COL_TOTAL_CARDS)),
+                    cursor.getString(cursor.getColumnIndex(Collection.COL_NAME)),
+                    cursor.getInt(cursor.getColumnIndex(Collection.COL_GENERATION)));
             collectionList.add(collection);
+            Log.d(TAG, collection.id + " " + collection.name);
         }
 
         int layout = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ?
                 android.R.layout.simple_list_item_activated_1 : android.R.layout.simple_list_item_1;
 
-
         setListAdapter(new ArrayAdapter<Collection>(getActivity(), layout, collectionList));
+
+        cursor.close();
+        db.close();
     }
 
     @Override

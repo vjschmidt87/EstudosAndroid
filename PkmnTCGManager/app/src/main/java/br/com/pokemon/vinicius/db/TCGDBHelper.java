@@ -25,8 +25,11 @@ public class TCGDBHelper  extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + Rarity.TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + Type.TABLE);
         db.execSQL(Type.CREATE_TABLE);
+        db.execSQL(Type.POPULATE_TABLE);
         db.execSQL(Rarity.CREATE_TABLE);
+        db.execSQL(Rarity.POPULATE_TABLE);
         db.execSQL(Collection.CREATE_TABLE);
+        db.execSQL(Collection.POPULATE_TABLE);
         db.execSQL(Card.CREATE_TABLE);
     }
 

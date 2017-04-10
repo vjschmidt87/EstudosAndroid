@@ -13,6 +13,12 @@ public class Type implements BaseColumns {
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE + "(" + _ID +
             " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_NAME + " TEXT NOT NULL);";
 
+    public static final String POPULATE_TABLE = "INSERT INTO " + TABLE + " (" + COL_NAME + ") VALUES ('Item'), " +
+            "('Supporter'), ('Energy'), ('Stadium'), ('Tool'), ('Normal'), ('Grass'), " +
+            "('Fire'), ('Water'), ('Lightning'), ('Fighting'), ('Psychic'), ('Dark'), " +
+            "('Metal'), ('Dragon'), ('Fairy');";
+
+
     public int id;
     public String name;
 
