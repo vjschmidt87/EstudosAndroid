@@ -75,6 +75,7 @@ public class CollectionFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         mCallback.onCollectionSelected(position);
+        CardFragment.selectedCollection = (Collection)l.getItemAtPosition(position);
 
         getListView().setItemChecked(position, true);
     }

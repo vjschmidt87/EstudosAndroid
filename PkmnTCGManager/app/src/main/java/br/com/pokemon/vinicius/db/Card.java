@@ -31,7 +31,7 @@ public class Card implements Parcelable, BaseColumns {
             Card.COL_DAMAGED + ", c." + Card.COL_NUMBER + ", c." + Card.COL_NAME + " as CARD_" + Card.COL_NAME + ", c." + Card.COL_COLLECTION + ", t." + Type.COL_NAME +
             " as TYPE_" + Type.COL_NAME +", r." + Rarity.COL_NAME + " as RARITY_" + Rarity.COL_NAME + " FROM " + Card.TABLE + " c INNER JOIN "
             + Type.TABLE + " t ON c." + COL_TYPE + " = t." + Type._ID + " INNER JOIN " + Rarity.TABLE +
-            " r ON c." + COL_RARITY + " = r." + Rarity._ID;
+            " r ON c." + COL_RARITY + " = r." + Rarity._ID + " WHERE " + Card.COL_COLLECTION + " = ?";
 
 
     public static final String POPULATE_TABLE = "INSERT INTO " + TABLE + " ("+ COL_OWN + ", " +
