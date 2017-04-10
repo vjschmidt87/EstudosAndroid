@@ -25,9 +25,21 @@ public class Card implements Parcelable, BaseColumns {
             Type.TABLE + "(" + Type._ID +"), FOREIGN KEY(" + Card.COL_RARITY + ") REFERENCES " +
             Rarity.TABLE + "(" + Rarity._ID +"));";
 
+    public static final String SELECT_CARD_LIST = "SELECT c." + Card._ID + ", c." + Card.COL_OWN + ", c." +
+            Card.COL_DAMAGED + ", c." + Card.COL_NUMBER + ", c." + Card.COL_NAME + " as CARD_" + Card.COL_NAME + ", t." + Type.COL_NAME +
+            " as TYPE_" + Type.COL_NAME +", r." + Rarity.COL_NAME + " as RARITY_" + Rarity.COL_NAME + " FROM " + Card.TABLE + " c INNER JOIN "
+            + Type.TABLE + " t ON c." + COL_TYPE + " = t." + Type._ID + " INNER JOIN " + Rarity.TABLE +
+            " r ON c." + COL_RARITY + " = r." + Rarity._ID;
+
+
+    public static final String POPULATE_TABLE = "INSERT INTO " + TABLE + " ("+ COL_OWN + ", " +
+            COL_DAMAGED + ", " + COL_NUMBER + ", " + COL_NAME + ", " + COL_TYPE + ", " + COL_RARITY +
+            ") VALUES (0, 0, 1, 'Teste', 1, 1)";
+
+
     public int id;
-    public boolean own = false;
-    public boolean dmg = false;
+    public int own;
+    public int dmg;
     public int number;
     public String name;
     public Type type;
@@ -42,7 +54,7 @@ public class Card implements Parcelable, BaseColumns {
         readFromParcel(in);
     }
 
-    public Card(int id, boolean own, boolean dmg, int number, String name, Type type, Rarity rarity) {
+    public Card(int id, int own, int dmg, int number, String name, Type type, Rarity rarity) {
         super();
         this.id = id;
         this.own = own;
@@ -73,7 +85,8 @@ public class Card implements Parcelable, BaseColumns {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
-        dest.writeBooleanArray(new boolean[]{true, dmg});
+        dest.writeInt(own);
+        dest.writeInt(dmg);
         dest.writeInt(number);
         dest.writeString(name);
         dest.writeString(type.name);
@@ -81,11 +94,9 @@ public class Card implements Parcelable, BaseColumns {
     }
 
     public void readFromParcel(Parcel in) {
-        boolean[] booleanArr = new boolean[2];
         id = in.readInt();
-        in.readBooleanArray(booleanArr);
-        own = booleanArr[0];
-        dmg = booleanArr[1];
+        own = in.readInt();
+        dmg = in.readInt();
         number = in.readInt();
         name = in.readString();
         type.name = in.readString();

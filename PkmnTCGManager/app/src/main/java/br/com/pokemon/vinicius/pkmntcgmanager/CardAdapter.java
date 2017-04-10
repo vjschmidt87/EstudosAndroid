@@ -37,7 +37,6 @@ public class CardAdapter extends ArrayAdapter<Card> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         CardAdapter.CardHolder holder = null;
-        //Log.v(TAG, String.valueOf(position));
 
         if (convertView == null || convertView.getTag() == null) {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
@@ -62,7 +61,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
                             "Clicked on Checkbox: " + cb.getText() +
                                     " is " + cb.isChecked(),
                             Toast.LENGTH_LONG).show();
-                    card.own = (cb.isChecked());
+                    card.own = cb.isChecked() ? 1 : 0;
                 }
             });
             holder.checkDmg.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +72,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
                             "Clicked on Checkbox: " + cb.getText() +
                                     " is " + cb.isChecked(),
                             Toast.LENGTH_LONG).show();
-                    card.dmg = (cb.isChecked());
+                    card.dmg = cb.isChecked() ? 1 : 0;
                 }
             });
         } else {
@@ -82,8 +81,8 @@ public class CardAdapter extends ArrayAdapter<Card> {
 
         Card card = cardList.get(position);
         holder.intId.setText(String.valueOf(card.id));
-        holder.checkOwn.setChecked(card.own);
-        holder.checkDmg.setChecked(card.dmg);
+        holder.checkOwn.setChecked(card.own == 1);
+        holder.checkDmg.setChecked(card.dmg == 1);
         holder.intNumber.setText(String.valueOf(card.number));
         holder.txtName.setText(card.name);
         holder.txtType.setText(card.type.name);
