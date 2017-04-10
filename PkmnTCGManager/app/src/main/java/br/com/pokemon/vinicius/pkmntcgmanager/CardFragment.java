@@ -66,6 +66,7 @@ public class CardFragment extends Fragment {
                     cursor.getInt(cursor.getColumnIndex(Card.COL_DAMAGED)),
                     cursor.getInt(cursor.getColumnIndex(Card.COL_NUMBER)),
                     cursor.getString(cursor.getColumnIndex("CARD_" + Card.COL_NAME)),
+                    cursor.getInt(cursor.getColumnIndex(Card.COL_COLLECTION)),
                     new Type(0, cursor.getString(cursor.getColumnIndex("TYPE_" + Type.COL_NAME))),
                     new Rarity(0, cursor.getString(cursor.getColumnIndex("RARITY_" + Rarity.COL_NAME))));
             cardList.add(card);
