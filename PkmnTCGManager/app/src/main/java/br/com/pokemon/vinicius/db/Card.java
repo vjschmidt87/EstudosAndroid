@@ -36,7 +36,8 @@ public class Card implements Parcelable, BaseColumns {
 
     public static final String POPULATE_TABLE = "INSERT INTO " + TABLE + " ("+ COL_OWN + ", " +
             COL_DAMAGED + ", " + COL_NUMBER + ", " + COL_NAME + ", " + COL_COLLECTION + ", " + COL_TYPE + ", " + COL_RARITY +
-            ") VALUES (0, 0, 1, 'Teste', 1, 1, 1)";
+            ") VALUES (1, 0, 1, 'Teste', 1, 1, 1), (0, 0, 1, 'Teste', 1, 1, 1), (0, 1, 1, 'Teste', 1, 1, 1), " +
+            "(1, 0, 1, 'Teste', 2, 1, 1), (0, 0, 1, 'Teste', 2, 1, 1), (0, 1, 1, 'Teste', 2, 1, 1)";
 
 
     public int id;

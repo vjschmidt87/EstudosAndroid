@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_line"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -44,18 +45,19 @@
         android:layout_below="@+id/card_id"
         android:layout_toLeftOf="@+id/card_name"
         android:layout_toStartOf="@+id/card_name"
-        app:layout_constraintRight_toLeftOf="@+id/card_name"
         android:layout_marginRight="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/check_dmg"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="0dp"
+        app:layout_constraintRight_toLeftOf="@+id/card_name"
+        app:layout_constraintLeft_toRightOf="@+id/check_dmg"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
+
         android:text="100"/>
 
     <TextView
         android:id="@+id/card_name"
-        android:layout_width="120dp"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:paddingLeft="2dp"
@@ -66,48 +68,38 @@
         app:layout_constraintLeft_toRightOf="@+id/card_number"
         app:layout_constraintRight_toLeftOf="@+id/card_type"
         app:layout_constraintBaseline_toBaselineOf="@+id/card_number"
-        android:text="Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card 0 40" />
+        android:text="Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card" />
 
     <TextView
         android:id="@+id/card_type"
         android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:paddingLeft="8dp"
+        android:paddingLeft="2dp"
         android:paddingRight="0dp"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/card_rarity"
         android:layout_toStartOf="@+id/card_rarity"
+        android:layout_marginRight="4dp"
         app:layout_constraintRight_toLeftOf="@+id/card_rarity"
-        android:layout_marginRight="8dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/card_number"
-        android:text="Type 0"/>
+        android:text="T"/>
 
-    <TextView
+    <ImageView
         android:id="@+id/card_rarity"
-        android:layout_width="25dp"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
         android:gravity="center_vertical"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:layout_below="@+id/card_id"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="8dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="1dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/card_number"
-        android:text="Rarity 0"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@mipmap/ic_launcher"/>
 
 </android.support.constraint.ConstraintLayout>
 
-    <!--ImageView
-        android:id="@+id/image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#000000"
-        android:gravity="center"
-        android:padding="32dp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteY="50dp"
-        tools:layout_editor_absoluteX="8dp" /-->
+
 

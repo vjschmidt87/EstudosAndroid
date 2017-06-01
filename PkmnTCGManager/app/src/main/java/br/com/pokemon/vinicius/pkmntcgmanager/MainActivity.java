@@ -38,13 +38,35 @@ public class MainActivity extends FragmentActivity implements OnCollectionSelect
             if (savedInstanceState != null) {
                 return;
             }
-            CollectionFragment firstFragment = new CollectionFragment();
-            firstFragment.setArguments(getIntent().getExtras());
-            getSupportFragmentManager().beginTransaction().add(R.id.collection_container, firstFragment).commit();
+            CollectionFragment collectionFragment = new CollectionFragment();
+            collectionFragment.setArguments(getIntent().getExtras());
+            getSupportFragmentManager().beginTransaction().add(R.id.collection_container, collectionFragment).commit();
         }
     }
 
     public void onCollectionSelected(int position) {
+        SQLiteDatabase db = mHelper.getReadableDatabase();
+        db.close();
+        CardFragment cardFragment = (CardFragment) getSupportFragmentManager().findFragmentById(R.id.card_list_fragment);
+
+        if (cardFragment != null) {
+            cardFragment.updateCollectionView(position, R.id.card_list_fragment);
+        } else {
+            cardFragment = new CardFragment();
+            Bundle args = new Bundle();
+            args.putInt(CardFragment.ARG_POSITION, position);
+            cardFragment.setArguments(args);
+
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+            transaction.replace(R.id.collection_container, cardFragment);
+            transaction.addToBackStack(null);
+
+            transaction.commit();
+        }
+    }
+
+    public void onCardClicked(int position) {
         SQLiteDatabase db = mHelper.getReadableDatabase();
         db.close();
         CardFragment cardFragment = (CardFragment) getSupportFragmentManager().findFragmentById(R.id.card_list_fragment);

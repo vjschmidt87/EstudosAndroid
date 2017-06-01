@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class TCGDBHelper  extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "br.com.pokemon.vinicius.db";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
 
     public TCGDBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
