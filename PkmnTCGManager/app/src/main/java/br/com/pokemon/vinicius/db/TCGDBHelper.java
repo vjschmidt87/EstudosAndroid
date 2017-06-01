@@ -1,9 +1,13 @@
 package br.com.pokemon.vinicius.db;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import br.com.pokemon.vinicius.pkmntcgmanager.MainActivity;
 
 /**
  * Created by vinicius.schmidt on 04/04/2017.
@@ -32,6 +36,7 @@ public class TCGDBHelper  extends SQLiteOpenHelper {
         db.execSQL(Collection.POPULATE_TABLE);
         db.execSQL(Card.CREATE_TABLE);
         db.execSQL(Card.POPULATE_TABLE);
+
     }
 
     @Override
@@ -63,5 +68,28 @@ public class TCGDBHelper  extends SQLiteOpenHelper {
         }
 
         return checkDB != null ? true : false;
+    }
+
+    public static CollectionStatusDTO getCollectionStatus(int collectionID) {
+        CollectionStatusDTO collectionStatusDTO = new CollectionStatusDTO();
+        SQLiteDatabase db = MainActivity.mHelper.getReadableDatabase();
+
+        Cursor c = db.rawQuery(Collection.SELECT_COLLECTION_DATA, new String[] { String.valueOf(collectionID) });
+
+        if(c != null && c.moveToFirst()) {
+            collectionStatusDTO.setName(c.getString(c.getColumnIndex("col." + Collection.COL_NAME)));
+            collectionStatusDTO.setTotalCards(c.getInt(c.getColumnIndex("col." + Collection.COL_TOTAL_CARDS)));
+            collectionStatusDTO.setTotalOwnCards(c.getInt(c.getColumnIndex("OWN")));
+            collectionStatusDTO.setTotalDamagedCards(c.getInt(c.getColumnIndex("DMG")));
+        }
+        db.close();
+        return collectionStatusDTO;
+    }
+
+    public static int updateDBWhereID(String table, ContentValues cv, int id) {
+        SQLiteDatabase db = MainActivity.mHelper.getReadableDatabase();
+        int result = db.update(table, cv, "_id = " + id, null);
+        db.close();
+        return result;
     }
 }

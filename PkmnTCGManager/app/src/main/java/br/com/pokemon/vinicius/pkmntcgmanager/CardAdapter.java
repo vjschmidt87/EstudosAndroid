@@ -25,6 +25,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import br.com.pokemon.vinicius.db.Card;
+import br.com.pokemon.vinicius.db.CollectionStatusDTO;
+import br.com.pokemon.vinicius.db.TCGDBHelper;
 
 /**
  * Created by vinicius.schmidt on 03/04/2017.
@@ -51,6 +53,8 @@ public class CardAdapter extends ArrayAdapter<Card> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if (convertView == null || convertView.getTag() == null) {
+
+
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
             convertView = inflater.inflate(layoutResourceId, parent, false);
 
@@ -83,12 +87,15 @@ public class CardAdapter extends ArrayAdapter<Card> {
                 CheckBox cb = (CheckBox) v;
                 Card card = (Card) cb.getTag();
                 card.own = cb.isChecked() ? 1 : 0;
-
-                SQLiteDatabase db = MainActivity.mHelper.getReadableDatabase();
+                View parent = (View)((View)((View)v.getParent()).getParent()).getParent();
                 cv = new ContentValues();
                 cv.put(Card.COL_OWN, cb.isChecked());
-                db.update(Card.TABLE, cv, "_id =" + card.id, null);
-                db.close();
+                TCGDBHelper.updateDBWhereID(Card.TABLE, cv, card.id);
+
+                CollectionStatusDTO collectionStatusDTO = TCGDBHelper.getCollectionStatus(card.collection);
+                ((TextView)parent.findViewById(R.id.collection_status)).setText(collectionStatusDTO.getName() + ": "
+                        + collectionStatusDTO.getTotalOwnCards() + "/" + collectionStatusDTO.getTotalCards()
+                        + " - Damaged: " + collectionStatusDTO.getTotalDamagedCards());
 
             }
         });
@@ -98,12 +105,15 @@ public class CardAdapter extends ArrayAdapter<Card> {
                 CheckBox cb = (CheckBox) v;
                 Card card = (Card) cb.getTag();
                 card.dmg = cb.isChecked() ? 1 : 0;
-
-                SQLiteDatabase db = MainActivity.mHelper.getReadableDatabase();
+                View parent = (View)((View)((View)v.getParent()).getParent()).getParent();
                 cv = new ContentValues();
                 cv.put(Card.COL_DAMAGED, cb.isChecked());
-                db.update(Card.TABLE, cv, "_id =" + card.id, null);
-                db.close();
+                TCGDBHelper.updateDBWhereID(Card.TABLE, cv, card.id);
+
+                CollectionStatusDTO collectionStatusDTO = TCGDBHelper.getCollectionStatus(card.collection);
+                ((TextView)parent.findViewById(R.id.collection_status)).setText(collectionStatusDTO.getName() + ": "
+                        + collectionStatusDTO.getTotalOwnCards() + "/" + collectionStatusDTO.getTotalCards()
+                        + " - Damaged: " + collectionStatusDTO.getTotalDamagedCards());
             }
         });
 

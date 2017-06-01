@@ -18,6 +18,16 @@ public class Collection implements Parcelable, BaseColumns {
             " INTEGER PRIMARY KEY AUTOINCREMENT, " +  COL_TOTAL_CARDS + " INTEGER NOT NULL, " +
             COL_NAME + " TEXT NOT NULL, " + COL_GENERATION + " INTEGER NOT NULL);";
 
+//    public static final String SELECT_COLLECTION_DATA = "SELECT SUM(case crd." + Card.COL_OWN + " when 1 then 1 else 0 end) AS OWN, "
+//            + "SUM(case crd." + Card.COL_DAMAGED + " when 1 then 1 else 0 end) AS DMG FROM " + Card.TABLE + " crd "
+//            + "WHERE "  + Card.COL_COLLECTION + " = ?";
+
+    public static final String SELECT_COLLECTION_DATA = "SELECT col." + COL_NAME + ", col." + COL_TOTAL_CARDS
+            + ", SUM(case crd." + Card.COL_OWN + " when 1 then 1 else 0 end) AS OWN, "
+            + "SUM(case crd." + Card.COL_DAMAGED + " when 1 then 1 else 0 end) AS DMG "
+            + "FROM " + Card.TABLE + " crd INNER JOIN " + TABLE + " col ON crd." + Card.COL_COLLECTION + " = col." + _ID
+            + " WHERE " + Card.COL_COLLECTION + " = ?";
+
     public static final String POPULATE_TABLE = "INSERT INTO " + TABLE + " ("+ COL_TOTAL_CARDS + ", " +
             COL_NAME + ", " + COL_GENERATION +") VALUES (53, 'Wizards Black Star Promos', 1), " +
             "(40, 'Nintendo Black Star Promos', 3), (56, 'DP Black Star Promos', 4), " +

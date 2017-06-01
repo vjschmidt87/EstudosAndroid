@@ -27,12 +27,13 @@ public class Card implements Parcelable, BaseColumns {
             "FOREIGN KEY("+ Card.COL_TYPE + ") REFERENCES " + Type.TABLE + "(" + Type._ID +"), " +
             "FOREIGN KEY(" + Card.COL_RARITY + ") REFERENCES " + Rarity.TABLE + "(" + Rarity._ID +"));";
 
-    public static final String SELECT_CARD_LIST = "SELECT c." + Card._ID + ", c." + Card.COL_OWN + ", c." +
-            Card.COL_DAMAGED + ", c." + Card.COL_NUMBER + ", c." + Card.COL_NAME + " as CARD_" + Card.COL_NAME + ", c." + Card.COL_COLLECTION + ", t." + Type.COL_NAME +
-            " as TYPE_" + Type.COL_NAME +", r." + Rarity.COL_NAME + " as RARITY_" + Rarity.COL_NAME + " FROM " + Card.TABLE + " c INNER JOIN "
-            + Type.TABLE + " t ON c." + COL_TYPE + " = t." + Type._ID + " INNER JOIN " + Rarity.TABLE +
-            " r ON c." + COL_RARITY + " = r." + Rarity._ID + " WHERE " + Card.COL_COLLECTION + " = ?";
-
+    public static final String SELECT_CARD_LIST = "SELECT c." + Card._ID + ", c." + Card.COL_OWN
+            + ", c." + Card.COL_DAMAGED + ", c." + Card.COL_NUMBER + ", c." + Card.COL_NAME + " as " + TABLE.toUpperCase() + "_" + Card.COL_NAME
+            + ", c." + Card.COL_COLLECTION + ", t." + Type.COL_NAME + " as " + Type.TABLE.toUpperCase() + "_" + Type.COL_NAME
+            + ", r." + Rarity.COL_NAME + " as " + Rarity.TABLE.toUpperCase() + "_" + Rarity.COL_NAME
+            + " FROM " + Card.TABLE + " c INNER JOIN " + Type.TABLE + " t ON c." + COL_TYPE + " = t." + Type._ID
+            + " INNER JOIN " + Rarity.TABLE + " r ON c." + COL_RARITY + " = r." + Rarity._ID
+            + " WHERE " + Card.COL_COLLECTION + " = ?";
 
     public static final String POPULATE_TABLE = "INSERT INTO " + TABLE + " ("+ COL_OWN + ", " +
             COL_DAMAGED + ", " + COL_NUMBER + ", " + COL_NAME + ", " + COL_COLLECTION + ", " + COL_TYPE + ", " + COL_RARITY +

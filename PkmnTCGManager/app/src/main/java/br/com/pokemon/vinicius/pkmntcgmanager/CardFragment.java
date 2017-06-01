@@ -9,12 +9,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import br.com.pokemon.vinicius.db.Card;
 import br.com.pokemon.vinicius.db.Collection;
+import br.com.pokemon.vinicius.db.CollectionStatusDTO;
 import br.com.pokemon.vinicius.db.Rarity;
+import br.com.pokemon.vinicius.db.TCGDBHelper;
 import br.com.pokemon.vinicius.db.Type;
 
 /**
@@ -81,6 +85,10 @@ public class CardFragment extends Fragment {
         MainActivity.mCardListView.setAdapter(MainActivity.mCardAdapter);
         cursor.close();
         db.close();
+        CollectionStatusDTO collectionStatusDTO = TCGDBHelper.getCollectionStatus(cardList.get(0).collection);
+        ((TextView)getActivity().findViewById(R.id.collection_status)).setText(collectionStatusDTO.getName() + ": "
+                + collectionStatusDTO.getTotalOwnCards() + "/" + collectionStatusDTO.getTotalCards()
+                + " - Damaged: " + collectionStatusDTO.getTotalDamagedCards());
 
         mCurrentPosition = position;
     }
