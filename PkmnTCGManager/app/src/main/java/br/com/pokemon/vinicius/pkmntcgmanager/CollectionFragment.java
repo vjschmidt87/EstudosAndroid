@@ -33,12 +33,13 @@ public class CollectionFragment extends ListFragment {
 
         SQLiteDatabase db = MainActivity.mHelper.getReadableDatabase();
         //query(tableName, tableColumns, whereClause, whereArgs, groupBy, having, orderBy);
-        Cursor cursor = db.query(Collection.TABLE, null, null, null, null, null, null);
+        Cursor cursor = db.query(Collection.TABLE, null, null, null, null, null, Collection.COL_PROMO + " DESC, " + Collection.COL_GENERATION);
         while (cursor.moveToNext()) {
             Collection collection = new Collection (cursor.getInt(cursor.getColumnIndex(Collection._ID)),
                     cursor.getInt(cursor.getColumnIndex(Collection.COL_TOTAL_CARDS)),
                     cursor.getString(cursor.getColumnIndex(Collection.COL_NAME)),
-                    cursor.getInt(cursor.getColumnIndex(Collection.COL_GENERATION)));
+                    cursor.getInt(cursor.getColumnIndex(Collection.COL_GENERATION)),
+                    cursor.getInt(cursor.getColumnIndex(Collection.COL_PROMO)));
             collectionList.add(collection);
             Log.d(TAG, collection.id + " " + collection.name);
         }

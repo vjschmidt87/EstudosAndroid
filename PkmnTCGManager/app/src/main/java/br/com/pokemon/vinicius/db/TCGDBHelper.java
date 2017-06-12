@@ -16,7 +16,7 @@ import br.com.pokemon.vinicius.pkmntcgmanager.MainActivity;
 public class TCGDBHelper  extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "br.com.pokemon.vinicius.db";
-    public static final int DB_VERSION = 2;
+    public static final int DB_VERSION = 1;
 
     public TCGDBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -35,7 +35,13 @@ public class TCGDBHelper  extends SQLiteOpenHelper {
         db.execSQL(Collection.CREATE_TABLE);
         db.execSQL(Collection.POPULATE_TABLE);
         db.execSQL(Card.CREATE_TABLE);
-        db.execSQL(Card.POPULATE_TABLE);
+        db.execSQL(Card.POPULATE_TABLE_C1);
+        db.execSQL(Card.POPULATE_TABLE_C2);
+        db.execSQL(Card.POPULATE_TABLE_C3);
+        db.execSQL(Card.POPULATE_TABLE_C4);
+        db.execSQL(Card.POPULATE_TABLE_C5);
+        //...
+        //db.execSQL(Card.POPULATE_TABLE_CN);
 
     }
 

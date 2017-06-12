@@ -3,24 +3,13 @@ package br.com.pokemon.vinicius.pkmntcgmanager;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.Resources;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -62,7 +51,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
             holder.intId = (TextView) convertView.findViewById(R.id.card_id);
             holder.checkOwn = (CheckBox) convertView.findViewById(R.id.check_own);
             holder.checkDmg = (CheckBox) convertView.findViewById(R.id.check_dmg);
-            holder.intNumber = (TextView) convertView.findViewById(R.id.card_number);
+            holder.txtNumber = (TextView) convertView.findViewById(R.id.card_number);
             holder.txtName = (TextView) convertView.findViewById(R.id.card_name);
             holder.txtType = (TextView) convertView.findViewById(R.id.card_type);
             holder.txtRarity = (ImageView) convertView.findViewById(R.id.card_rarity);
@@ -77,7 +66,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
         holder.intId.setText(String.valueOf(card.id));
         holder.checkOwn.setChecked(card.own == 1);
         holder.checkDmg.setChecked(card.dmg == 1);
-        holder.intNumber.setText(String.valueOf(card.number));
+        holder.txtNumber.setText(card.number);
         holder.txtName.setText(card.name);
         holder.txtType.setText(card.type.name.substring(0, 1));
         holder.txtRarity.setImageResource(context.getResources().getIdentifier(card.rarity.name.toLowerCase().replace(" ", "_") , "drawable", context.getPackageName()));
@@ -137,7 +126,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
         TextView intId;
         CheckBox checkOwn;
         CheckBox checkDmg;
-        TextView intNumber;
+        TextView txtNumber;
         TextView txtName;
         TextView txtType;
         ImageView txtRarity;
