@@ -51,6 +51,7 @@ public class MainActivity extends FragmentActivity implements OnCollectionSelect
 
         if (cardFragment != null) {
             cardFragment.updateCollectionView(position, R.id.card_list_fragment);
+            ColorArrayAdapter.selectedCollection = position;
         } else {
             cardFragment = new CardFragment();
             Bundle args = new Bundle();

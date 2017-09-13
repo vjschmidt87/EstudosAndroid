@@ -3,12 +3,15 @@ package br.com.pokemon.vinicius.pkmntcgmanager;
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -23,6 +26,7 @@ import br.com.pokemon.vinicius.db.TCGDBHelper;
 
 public class CollectionFragment extends ListFragment {
     private static final String TAG = "CollectionFragment";
+    int save = -1;
     OnCollectionSelectedListener mCallback;
     public static ArrayList<Collection> collectionList;
 
@@ -47,7 +51,7 @@ public class CollectionFragment extends ListFragment {
         int layout = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ?
                 android.R.layout.simple_list_item_activated_1 : android.R.layout.simple_list_item_1;
 
-        setListAdapter(new ArrayAdapter<Collection>(getActivity(), layout, collectionList));
+        setListAdapter(new ColorArrayAdapter(getActivity(), layout, collectionList));
 
         cursor.close();
         db.close();
@@ -79,4 +83,6 @@ public class CollectionFragment extends ListFragment {
 
         getListView().setItemChecked(position, true);
     }
+
+
 }
