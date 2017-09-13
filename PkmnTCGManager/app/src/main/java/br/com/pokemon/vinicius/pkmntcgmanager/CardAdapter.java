@@ -3,6 +3,7 @@ package br.com.pokemon.vinicius.pkmntcgmanager;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +62,12 @@ public class CardAdapter extends ArrayAdapter<Card> {
         } else {
             holder = (CardAdapter.CardHolder) convertView.getTag();
         }
-
+        //View view = super.getView(position, convertView, parent);
+        if (position % 2 == 1) {
+            convertView.setBackgroundColor(0xFFCCCCCC);
+        } else {
+            convertView.setBackgroundColor(0xFFDDDDDD);
+        }
         Card card = cardList.get(position);
         holder.intId.setText(String.valueOf(card.id));
         holder.checkOwn.setChecked(card.own == 1);
