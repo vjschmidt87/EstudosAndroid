@@ -26,7 +26,6 @@ import br.com.pokemon.vinicius.db.Type;
  */
 
 public class CardFragment extends Fragment {
-    public static Collection selectedCollection;
     private static final String TAG = "CardFragment";
     static final String ARG_POSITION = "position";
     int mCurrentPosition = -1;
@@ -60,11 +59,10 @@ public class CardFragment extends Fragment {
 
     public void updateCollectionView(int position, int id) {
         cardList = new ArrayList<Card>();
-
         SQLiteDatabase db = MainActivity.mHelper.getReadableDatabase();
         //query(tableName, tableColumns, whereClause, whereArgs, groupBy, having, orderBy);
         //Cursor cursor = db.query(Card.TABLE, null, null, null, null, null, null);
-        Cursor cursor = db.rawQuery(Card.SELECT_CARD_LIST, new String[] { String.valueOf(selectedCollection.id) });
+        Cursor cursor = db.rawQuery(Card.SELECT_CARD_LIST, new String[] { String.valueOf(CollectionFragment.collectionList.get(position).id) });
 
         while (cursor.moveToNext()) {
             Card card = new Card (cursor.getInt(cursor.getColumnIndex(Card._ID)),

@@ -406,4 +406,220 @@ public class Card implements Parcelable, BaseColumns {
             "(0, 0, 'BW100', 'N', 'Pokémon League (Fennekin Season; 2013-2014 Cycle)', 5, 2, 8), " +
             "(0, 0, 'BW101', 'Genesect', 'Genesect and the Legend Awakened DVD release', 5, 7, 8);";
 
+    public static final String POPULATE_TABLE_C6 = "INSERT INTO " + TABLE + " ("+ COL_OWN + ", " +
+            COL_DAMAGED + ", " + COL_NUMBER + ", " + COL_NAME + ", "  + COL_DESCRIPTION + ", " +
+            COL_COLLECTION + ", " + COL_TYPE + ", " + COL_RARITY + ") VALUES " +
+            "(0, 0, 'XY01', 'Chespin', 'Chespin Box', 6, 7, 8), " +
+            "(0, 0, 'XY02', 'Fennekin', 'Fennekin Box', 6, 8, 8), " +
+            "(0, 0, 'XY03', 'Froakie', 'Froakie Box', 6, 9, 8), " +
+            "(0, 0, 'XY04', 'Sylveon', 'Sylveon Collection', 6, 16, 8), " +
+            "(0, 0, 'XY05', 'Xerneas', 'Xerneas Figure Collection, Xerneas Jumbo Collection', 6, 16, 8), " +
+            "(0, 0, 'XY06', 'Yveltal', 'Yveltal Figure Collection, Yveltal Jumbo Collection', 6, 13, 8), " +
+            "(0, 0, 'XY07', 'Xerneas-EX', 'Legends of Kalos Tins', 6, 16, 8), " +
+            "(0, 0, 'XY08', 'Yveltal-EX', 'Legends of Kalos Tins', 6, 13, 8), " +
+            "(0, 0, 'XY09', 'Garchomp-EX', 'Garchomp-EX Box', 6, 15, 8), " +
+            "(0, 0, 'XY10', 'Dragalge', 'Flashfire Prerelease participation promo', 6, 15, 8), " +
+            "(0, 0, 'XY11', 'Skiddo', 'Flashfire Blisters', 6, 7, 8), " +
+            "(0, 0, 'XY12', 'Honedge', 'Flashfire Blisters', 6, 14, 8), " +
+            "(0, 0, 'XY13', 'Machamp', 'Furious Fists Prerelease participation promo', 6, 11, 8), " +
+            "(0, 0, 'XY14', 'Trevenant', 'Furious Fists Blisters, Furious Fists Launch Kit', 6, 12, 8), " +
+            "(0, 0, 'XY15', 'Slurpuff', 'Furious Fists Blisters, Furious Fists Launch Kit', 6, 16, 8), " +
+            "(0, 0, 'XY16', 'Gogoat', 'Furious Fists Blisters', 6, 7, 8), " +
+            "(0, 0, 'XY17', 'Charizard-EX', 'Charizard-EX Box', 6, 8, 8), " +
+            "(0, 0, 'XY18', 'Chesnaught-EX', 'Kalos Power Tins', 6, 7, 8), " +
+            "(0, 0, 'XY19', 'Delphox-EX', 'Kalos Power Tins', 6, 8, 8), " +
+            "(0, 0, 'XY20', 'Greninja-EX', 'Kalos Power Tins', 6, 9, 8), " +
+            "(0, 0, 'XY21', 'Bronzong', 'Phantom Forces Prerelease participation promo', 6, 14, 8), " +
+            "(0, 0, 'XY22', 'Darkrai', 'Phantom Forces Blisters', 6, 13, 8), " +
+            "(0, 0, 'XY23', 'Shiftry', 'Phantom Forces Blisters', 6, 7, 8), " +
+            "(0, 0, 'XY24', 'Greninja', 'Phantom Forces Blisters', 6, 13, 8), " +
+            "(0, 0, 'XY25', 'Krookodile-EX', 'Krookodile-EX Box', 6, 13, 8), " +
+            "(0, 0, 'XY26', 'Pyroar', 'Pyroar Box', 6, 8, 8), " +
+            "(0, 0, 'XY27', 'Champions Festival', '2014 World Championships', 6, 4, 8), " +
+            "(0, 0, 'XY28', 'Venusaur-EX', '-EX Power Trio Tins', 6, 7, 8), " +
+            "(0, 0, 'XY29', 'Charizard-EX', '-EX Power Trio Tins', 6, 8, 8), " +
+            "(0, 0, 'XY30', 'Blastoise-EX', '-EX Power Trio Tins', 6, 9, 8), " +
+            "(0, 0, 'XY31', 'Xerneas', 'Battle Arena Decks: Xerneas vs Yveltal', 6, 16, 8), " +
+            "(0, 0, 'XY32', 'Yveltal', 'Battle Arena Decks: Xerneas vs Yveltal', 6, 13, 8), " +
+            "(0, 0, 'XY33', 'Trevor', 'Battle Arena Decks: Xerneas vs Yveltal', 6, 2, 8), " +
+            "(0, 0, 'XY34', 'Metagross-EX', 'Mega Metagross-EX Premium Collection', 6, 14, 8), " +
+            "(0, 0, 'XY35', 'Mega Metagross-EX', 'Mega Metagross-EX Premium Collection', 6, 14, 8), " +
+            "(0, 0, 'XY36', 'Treecko', 'Hoenn Collection', 6, 7, 8), " +
+            "(0, 0, 'XY37', 'Torchic', 'Hoenn Collection', 6, 8, 8), " +
+            "(0, 0, 'XY38', 'Mudkip', 'Hoenn Collection', 6, 9, 8), " +
+            "(0, 0, 'XY39', 'Kingdra', 'Primal Clash Prerelease participation promo', 6, 15, 8), " +
+            "(0, 0, 'XY40', 'Ditto', 'Primal Clash Three Pack Blisters, Primal Clash Launch Kit', 6, 6, 8), " +
+            "(0, 0, 'XY41', 'Kyogre-EX', 'Legends of Hoenn Tins', 6, 9, 8), " +
+            "(0, 0, 'XY42', 'Groudon-EX', 'Legends of Hoenn Tins', 6, 11, 8), " +
+            "(0, 0, 'XY43', 'Diancie-EX', 'Mega Diancie-EX Premium Collection', 6, 16, 8), " +
+            "(0, 0, 'XY44', 'Mega Diancie-EX', 'Mega Diancie-EX Premium Collection', 6, 16, 8), " +
+            "(0, 0, 'XY45', 'Gallade-EX', 'Gallade-EX Box', 6, 12, 8), " +
+            "(0, 0, 'XY46', 'Altaria', 'Roaring Skies Prerelease participation promo', 6, 6, 8), " +
+            "(0, 0, 'XY47', 'Heliolisk', 'Roaring Skies Single Pack Blisters', 6, 10, 8), " +
+            "(0, 0, 'XY48', 'Meowstic', 'Roaring Skies Single Pack Blisters', 6, 12, 8), " +
+            "(0, 0, 'XY49', 'Regirock', 'Roaring Skies Three Pack Blisters, Roaring Skies Launch Kit', 6, 11, 8), " +
+            "(0, 0, 'XY50', 'Pangoro', 'Roaring Skies Three Pack Blisters, Roaring Skies Launch Kit', 6, 11, 8), " +
+            "(0, 0, 'XY51', 'Kyogre', 'Primal Kyogre Collection, Kyogre Box', 6, 9, 8), " +
+            "(0, 0, 'XY52', 'Groudon', 'Primal Groudon Collection, Groudon Box', 6, 11, 8), " +
+            "(0, 0, 'XY53', 'Sceptile-EX', 'Hoenn Power Tins', 6, 7, 8), " +
+            "(0, 0, 'XY54', 'Blaziken-EX', 'Hoenn Power Tins, Mega Blaziken-EX Premium Collection', 6, 8, 8), " +
+            "(0, 0, 'XY55', 'Swampert-EX', 'Hoenn Power Tins, Mega Swampert-EX Premium Collection', 6, 9, 8), " +
+            "(0, 0, 'XY56', 'Blissey', 'Ancient Origins Single Pack Blisters', 6, 6, 8), " +
+            "(0, 0, 'XY57', 'Fearow', 'Ancient Origins Single Pack Blisters', 6, 6, 8), " +
+            "(0, 0, 'XY58', 'Malamar', 'Ancient Origins Three Pack Blisters, Ancient Origins Launch Kit', 6, 13, 8), " +
+            "(0, 0, 'XY59', 'Salamence', 'Ancient Origins Three Pack Blisters, Ancient Origins Launch Kit', 6, 15, 8), " +
+            "(0, 0, 'XY60', 'Gyarados', 'Ancient Origins Prerelease participation promo', 6, 9, 8), " +
+            "(0, 0, 'XY61', 'Flygon-EX', 'Flygon-EX Box', 6, 15, 8), " +
+            "(0, 0, 'XY62', 'Absol-EX', 'Mega Absol-EX Premium Collection', 6, 13, 8), " +
+            "(0, 0, 'XY63', 'Mega Absol-EX', 'Mega Absol-EX Premium Collection', 6, 13, 8), " +
+            "(0, 0, 'XY64', 'Rayquaza', 'Mega Rayquaza Collection, Rayquaza Box', 6, 15, 8), " +
+            "(0, 0, 'XY65', 'Latios', 'Mega Latios Collection', 6, 12, 8), " +
+            "(0, 0, 'XY66', 'Rayquaza-EX', 'Rayquaza-EX Box', 6, 6, 8), " +
+            "(0, 0, 'XY67', 'Jirachi', 'BREAKthrough Single Pack Blisters', 6, 14, 8), " +
+            "(0, 0, 'XY68', 'Chesnaught', 'BREAKthrough Prerelease participation promo', 6, 7, 8), " +
+            "(0, 0, 'XY69', 'Rayquaza-EX', 'Shiny Rayquaza-EX Box', 6, 6, 8), " +
+            "(0, 0, 'XY70', 'Tyrantrum-EX', 'Tyrantrum-EX Box', 6, 15, 8), " +
+            "(0, 0, 'XY71', 'Hoopa-EX', 'Powers Beyond Tins', 6, 12, 8), " +
+            "(0, 0, 'XY72', 'Latios-EX', 'Powers Beyond Tins', 6, 15, 8), " +
+            "(0, 0, 'XY73', 'Rayquaza-EX', 'Powers Beyond Tins', 6, 15, 8), " +
+            "(0, 0, 'XY74', 'Reshiram', 'Pikachu-EX Legendary Collection', 6, 8, 8), " +
+            "(0, 0, 'XY75', 'Palkia', 'Hoopa-EX Legendary Collection', 6, 9, 8), " +
+            "(0, 0, 'XY76', 'Zekrom', 'Hoopa-EX Legendary Collection', 6, 10, 8), " +
+            "(0, 0, 'XY77', 'Dialga', 'Pikachu-EX Legendary Collection', 6, 14, 8), " +
+            "(0, 0, 'XY78', 'Latias', 'Hoopa-EX Legendary Collection', 6, 15, 8), " +
+            "(0, 0, 'XY79', 'Latios', 'Pikachu-EX Legendary Collection', 6, 15, 8), " +
+            "(0, 0, 'XY80', 'Black Kyurem', 'Hoopa-EX Legendary Collection', 6, 15, 8), " +
+            "(0, 0, 'XY81', 'White Kyurem', 'Pikachu-EX Legendary Collection', 6, 15, 8), " +
+            "(0, 0, 'XY82', 'Regigigas', 'Hoopa-EX Legendary Collection', 6, 6, 8), " +
+            "(0, 0, 'XY83', 'Arceus', 'Pikachu-EX Legendary Collection', 6, 6, 8), " +
+            "(0, 0, 'XY84', 'Pikachu-EX', 'Pikachu-EX Legendary Collection', 6, 10, 8), " +
+            "(0, 0, 'XY85', 'Hoopa-EX', 'Hoopa-EX Legendary Collection', 6, 12, 8), " +
+            "(0, 0, 'XY86', 'Mega Blaziken-EX', 'Mega Blaziken-EX Premium Collection', 6, 8, 8), " +
+            "(0, 0, 'XY87', 'Mega Swampert-EX', 'Mega Swampert-EX Premium Collection', 6, 9, 8), " +
+            "(0, 0, 'XY88', 'Chespin', 'BREAKthrough Collector Chest', 6, 7, 8), " +
+            "(0, 0, 'XY89', 'Pikachu', 'BREAKthrough Collector Chest', 6, 10, 8), " +
+            "(0, 0, 'XY90', 'Hoopa', 'BREAKthrough Collector Chest', 6, 12, 8), " +
+            "(0, 0, 'XY91', 'Champions Festival', '2015 World Championships', 6, 4, 8), " +
+            "(0, 0, 'XY92', 'Sableye', 'BREAKthrough Three Pack Blisters, BREAKthrough Launch Display', 6, 12, 8), " +
+            "(0, 0, 'XY93', 'Celebi', 'BREAKthrough Three Pack Blisters, BREAKthrough Launch Display', 6, 7, 8), " +
+            "(0, 0, 'XY94', 'Trevenant', 'BREAKpoint Prerelease participation promo', 6, 12, 8), " +
+            "(0, 0, 'XY95', 'Pikachu', 'BREAKpoint One Pack Blisters', 6, 10, 8), " +
+            "(0, 0, 'XY96', 'Umbreon', 'BREAKpoint Three Pack Blisters', 6, 13, 8), " +
+            "(0, 0, 'XY97', 'Aerodactyl-EX', 'Mega Aerodactyl-EX Premium Collection', 6, 11, 8), " +
+            "(0, 0, 'XY98', 'Mega Aerodactyl-EX', 'Mega Aerodactyl-EX Premium Collection', 6, 11, 8), " +
+            "(0, 0, 'XY99', 'Aerodactyl Spirit Link', 'Mega Aerodactyl-EX Premium Collection', 6, 5, 8), " +
+            "(0, 0, 'XY100', 'Mewtwo', 'Mega Mewtwo Collection, Mega Mewtwo Box', 6, 12, 8), " +
+            "(0, 0, 'XY101', 'Mewtwo', 'Mega Mewtwo Collection, Mega Mewtwo Box', 6, 12, 8), " +
+            "(0, 0, 'XY102', 'Aurorus-EX', 'Aurorus-EX Box', 6, 9, 8), " +
+            "(0, 0, 'XY103', 'Mawile-EX', 'Mega Mawile-EX Premium Collection', 6, 16, 8), " +
+            "(0, 0, 'XY104', 'Mega Mawile-EX', 'Mega Mawile-EX Premium Collection', 6, 16, 8), " +
+            "(0, 0, 'XY105', 'Mawile Spirit Link', 'Mega Mawile-EX Premium Collection', 6, 5, 8), " +
+            "(0, 0, 'XY106', 'Gyarados-EX', 'Triple Power Tins', 6, 9, 8), " +
+            "(0, 0, 'XY107', 'Mewtwo-EX', 'Triple Power Tins', 6, 12, 8), " +
+            "(0, 0, 'XY108', 'Machamp-EX', 'Triple Power Tins', 6, 11, 8), " +
+            "(0, 0, 'XY109', 'Gyarados', 'Shiny Mega Gyarados Collection, Shiny Mega Gyarados Box', 6, 9, 8), " +
+            "(0, 0, 'XY110', 'Mew', 'Mythical Pokémon Collection – Mew', 6, 12, 8), " +
+            "(0, 0, 'XY111', 'Celebi', 'Mythical Pokémon Collection – Celebi', 6, 7, 8), " +
+            "(0, 0, 'XY112', 'Jirachi', 'Mythical Pokémon Collection – Jirachi', 6, 14, 8), " +
+            "(0, 0, 'XY113', 'Manaphy', 'Mythical Pokémon Collection – Manaphy', 6, 9, 8), " +
+            "(0, 0, 'XY114', 'Darkrai', 'Mythical Pokémon Collection – Darkrai', 6, 13, 8), " +
+            "(0, 0, 'XY115', 'Shaymin', 'Mythical Pokémon Collection – Shaymin', 6, 7, 8), " +
+            "(0, 0, 'XY116', 'Arceus', 'Mythical Pokémon Collection – Arceus', 6, 6, 8), " +
+            "(0, 0, 'XY117', 'Victini', 'Mythical Pokémon Collection – Victini', 6, 8, 8), " +
+            "(0, 0, 'XY118', 'Keldeo', 'Mythical Pokémon Collection – Keldeo', 6, 9, 8), " +
+            "(0, 0, 'XY119', 'Genesect', 'Mythical Pokémon Collection—Genesect', 6, 14, 8), " +
+            "(0, 0, 'XY120', 'Meloetta', 'Mythical Pokémon Collection—Meloetta', 6, 12, 8), " +
+            "(0, 0, 'XY121', 'Charizard-EX', 'Charizard-EX Red & Blue Collection, Charizard-EX Red & Blue Box', 6, 8, 8), " +
+            "(0, 0, 'XY122', 'Blastoise-EX', 'Blastoise-EX Red & Blue Collection, Blastoise-EX Red & Blue Box', 6, 9, 8), " +
+            "(0, 0, 'XY123', 'Venusaur-EX', 'Venusaur-EX Red & Blue Collection, Venusaur-EX Red & Blue Box', 6, 7, 8), " +
+            "(0, 0, 'XY124', 'Pikachu-EX', 'Pikachu-EX Red & Blue Collection, Pikachu-EX Red & Blue Box', 6, 10, 8), " +
+            "(0, 0, 'XY125', 'Mewtwo-EX', 'Super-Premium Collection – Mew and Mewtwo', 6, 12, 8), " +
+            "(0, 0, 'XY126', 'Mew-EX', 'Super-Premium Collection – Mew and Mewtwo', 6, 12, 8), " +
+            "(0, 0, 'XY127', 'Moltres', 'Fates Collide Prerealease participation promo', 6, 8, 8), " +
+            "(0, 0, 'XY128', 'White Kyurem', 'Fates Collide Prerealease participation promo', 6, 9, 8), " +
+            "(0, 0, 'XY129', 'Zygarde', 'Fates Collide Prerealease participation promo', 6, 11, 8), " +
+            "(0, 0, 'XY130', 'Tyranitar', 'Fates Collide Prerealease participation promo', 6, 13, 8), " +
+            "(0, 0, 'XY131', 'Pansear', 'Fates Collide Single Pack Blisters', 6, 8, 8), " +
+            "(0, 0, 'XY132', 'Gastly', 'Fates Collide Single Pack Blisters', 6, 12, 8), " +
+            "(0, 0, 'XY133', 'Ash-Greninja-EX', 'Ash-Greninja-EX Box', 6, 9, 8), " +
+            "(0, 0, 'XY134', 'Empoleon BREAK', 'BREAK Evolution Box', 6, 9, 8), " +
+            "(0, 0, 'XY135', 'Beheeyem BREAK', 'BREAK Evolution Box', 6, 12, 8), " +
+            "(0, 0, 'XY136', 'Noctowl BREAK', 'BREAK Evolution Box', 6, 6, 8), " +
+            "(0, 0, 'XY137', 'Vivillon', 'Fates Collide Three Pack Blisters', 6, 7, 8), " +
+            "(0, 0, 'XY138', 'Froakie', 'Fates Collide Three Pack Blisters', 6, 9, 8), " +
+            "(0, 0, 'XY139', 'Floette', 'Steam Siege Single Pack Blisters', 6, 16, 8), " +
+            "(0, 0, 'XY140', 'Lucario', 'Steam Siege Single Pack Blisters', 6, 11, 8), " +
+            "(0, 0, 'XY141', 'Rayquaza', 'Steam Siege Three Pack Blisters', 6, 15, 8), " +
+            "(0, 0, 'XY142', 'Azelf', 'Steam Siege Three Pack Blisters', 6, 12, 8), " +
+            "(0, 0, 'XY143', 'Magikarp', 'Shiny Mega Gyarados Box', 6, 9, 8), " +
+            "(0, 0, 'XY144', 'Yanmega', 'Steam Siege Prerelease participation promo', 6, 7, 8), " +
+            "(0, 0, 'XY145', 'Volcanion', 'Steam Siege Prerelease participation promo', 6, 8, 8), " +
+            "(0, 0, 'XY146', 'Clawitzer', 'Steam Siege Prerelease participation promo', 6, 9, 8), " +
+            "(0, 0, 'XY147', 'Hoopa', 'Steam Siege Prerelease participation promo', 6, 12, 8), " +
+            "(0, 0, 'XY148', 'Shaymin-EX', 'Generations Elite Trainer Box', 6, 7, 8), " +
+            "(0, 0, 'XY149', 'Xerneas-EX', 'Shiny Kalos Tins', 6, 16, 8), " +
+            "(0, 0, 'XY150', 'Yveltal-EX', 'Shiny Kalos Tins', 6, 13, 8), " +
+            "(0, 0, 'XY151', 'Zygarde-EX', 'Shiny Kalos Tins', 6, 11, 8), " +
+            "(0, 0, 'XY152', 'Zygarde', 'Zygarde Collection, Zygarde Box', 6, 11, 8), " +
+            "(0, 0, 'XY153', 'Ho-Oh', 'BREAK Evolution Box: Ho-Oh and Lugia', 6, 8, 8), " +
+            "(0, 0, 'XY154', 'Ho-Oh BREAK', 'BREAK Evolution Box: Ho-Oh and Lugia', 6, 8, 8), " +
+            "(0, 0, 'XY155', 'Wobbuffet BREAK', 'BREAK Evolution Box: Ho-Oh and Lugia', 6, 12, 8), " +
+            "(0, 0, 'XY156', 'Lugia', 'BREAK Evolution Box: Ho-Oh and Lugia', 6, 6, 8), " +
+            "(0, 0, 'XY157', 'Beedrill-EX', 'Mega Beedrill-EX Premium Collection', 6, 7, 8), " +
+            "(0, 0, 'XY158', 'Mega Beedrill-EX', 'Mega Beedrill-EX Premium Collection', 6, 7, 8), " +
+            "(0, 0, 'XY159', 'Beedrill Spirit Link', 'Mega Beedrill-EX Premium Collection', 6, 5, 8), " +
+            "(0, 0, 'XY160', 'Black Kyurem', 'Evolutions Three Pack Blisters', 6, 9, 8), " +
+            "(0, 0, 'XY161', 'Braixen', 'Evolutions Three Pack Blisters', 6, 8, 8), " +
+            "(0, 0, 'XY162', 'Greninja', 'Evolutions Single Pack Blisters', 6, 9, 8), " +
+            "(0, 0, 'XY163', 'Weezing', 'Evolutions Single Pack Blisters', 6, 12, 8), " +
+            "(0, 0, 'XY164', 'Volcanion', 'Collector Chest 2016', 6, 8, 8), " +
+            "(0, 0, 'XY165', 'Magearna', 'Collector Chest 2016', 6, 14, 8), " +
+            "(0, 0, 'XY166', 'Mega Gengar-EX', 'Collector Chest 2016', 6, 12, 8), " +
+            "(0, 0, 'XY167', 'Garchomp-EX', 'Mega Garchomp-EX Premium Collection', 6, 15, 8), " +
+            "(0, 0, 'XY168', 'Mega Garchomp-EX', 'Mega Garchomp-EX Premium Collection', 6, 15, 8), " +
+            "(0, 0, 'XY169', 'Garchomp Spirit Link', 'Mega Garchomp-EX Premium Collection', 6, 5, 8), " +
+            "(0, 0, 'XY170', 'Salamence-EX', 'Mega Salamence-EX Premium Collection', 6, 15, 8), " +
+            "(0, 0, 'XY171', 'Mega Salamence-EX', 'Mega Salamence-EX Premium Collection', 6, 15, 8), " +
+            "(0, 0, 'XY172', 'Salamence Spirit Link', 'Mega Salamence-EX Premium Collection', 6, 5, 8), " +
+            "(0, 0, 'XY173', 'Volcanion-EX', 'Battle Heart Tins', 6, 17, 8), " +
+            "(0, 0, 'XY174', 'Pikachu-EX', 'Battle Heart Tins', 6, 10, 8), " +
+            "(0, 0, 'XY175', 'Magearna-EX', 'Battle Heart Tins', 6, 14, 8), " +
+            "(0, 0, 'XY176', 'Champions Festival', 'St 2016 World Championships', 6, 4, 8), " +
+            "(0, 0, 'XY177', 'Karen', 'Battle Arena Decks: Keldeo vs Rayquaza', 6, 2, 8), " +
+            "(0, 0, 'XY178', 'Absol', 'Alola Collector’s Pin 2-Pack Blister', 6, 13, 8), " +
+            "(0, 0, 'XY179', 'Snorlax', 'Snorlax-GX Box', 6, 6, 8), " +
+            "(0, 0, 'XY180', 'Arcanine BREAK', 'Arcanine BREAK Evolution Box', 6, 8, 8), " +
+            "(0, 0, 'XY181', 'Crobat BREAK', 'Arcanine BREAK Evolution Box', 6, 12, 8), " +
+            "(0, 0, 'XY182', 'Mandibuzz BREAK', 'Arcanine BREAK Evolution Box', 6, 13, 8), " +
+            "(0, 0, 'XY183', 'Mewtwo-EX', 'Mewtwo-EX Box', 6, 12, 8), " +
+            "(0, 0, 'XY184', 'Giratina', 'Giratina Three Pack Blister', 6, 12, 8), " +
+            "(0, 0, 'XY185', 'Volcanion', 'Volcanion Mythical Collection', 6, 8, 8), " +
+            "(0, 0, 'XY186', 'Magearna', 'Magearna Mythical Collection', 6, 14, 8), " +
+            "(0, 0, 'XY187', 'Celebi', 'Volcanion Mythical Collection', 6, 7, 8), " +
+            "(0, 0, 'XY188', 'Shaymin', 'Magearna Mythical Collection', 6, 7, 8), " +
+            "(0, 0, 'XY189', 'Victini', 'Volcanion Mythical Collection', 6, 8, 8), " +
+            "(0, 0, 'XY190', 'Manaphy', 'Magearna Mythical Collection', 6, 9, 8), " +
+            "(0, 0, 'XY191', 'Keldeo', 'Volcanion Mythical Collection', 6, 9, 8), " +
+            "(0, 0, 'XY192', 'Mew', 'Magearna Mythical Collection', 6, 12, 8), " +
+            "(0, 0, 'XY193', 'Meloetta', 'Magearna Mythical Collection', 6, 12, 8), " +
+            "(0, 0, 'XY194', 'Darkrai', 'Volcanion Mythical Collection', 6, 13, 8), " +
+            "(0, 0, 'XY195', 'Jirachi', 'Volcanion Mythical Collection', 6, 14, 8), " +
+            "(0, 0, 'XY196', 'Genesect', 'Magearna Mythical Collection', 6, 14, 8), " +
+            "(0, 0, 'XY197', 'Arceus', 'Magearna Mythical Collection', 6, 6, 8), " +
+            "(0, 0, 'XY198', 'Mega Camerupt-EX', 'Mega Camerupt-EX Premium Collection', 6, 8, 8), " +
+            "(0, 0, 'XY199', 'Camerupt Spirit Link', 'Mega Camerupt-EX Premium Collection', 6, 5, 8), " +
+            "(0, 0, 'XY200', 'Mega Sharpedo-EX', 'Mega Sharpedo-EX Premium Collection', 6, 13, 8), " +
+            "(0, 0, 'XY201', 'Sharpedo Spirit Link', 'Mega Sharpedo-EX Premium Collection', 6, 5, 8), " +
+            "(0, 0, 'XY202', 'Pikachu', 'Pokémon League (Evolutions 1 Season; 2016-2017 Cycle)', 6, 10, 8), " +
+            "(0, 0, 'XY203', 'Gym Badge', 'Pokémon League (Evolutions 1 Season; 2016-2017 Cycle)', 6, 1, 8), " +
+            "(0, 0, 'XY204', 'Gym Badge', 'Pokémon League (Evolutions 2 Season; 2016-2017 Cycle)', 6, 1, 8), " +
+            "(0, 0, 'XY205', 'Gym Badge', 'Pokémon League (Evolutions 3 Season; 2016-2017 Cycle)', 6, 1, 8), " +
+            "(0, 0, 'XY206', 'Gym Badge', 'Pokémon League (Evolutions 4 Season; 2016-2017 Cycle)', 6, 1, 8), " +
+            "(0, 0, 'XY207', 'Gym Badge', 'Pokémon League (Evolutions 5 Season; 2016-2017 Cycle)', 6, 1, 8), " +
+            "(0, 0, 'XY208', 'Gym Badge', 'Pokémon League (Evolutions 6 Season; 2016-2017 Cycle)', 6, 1, 8), " +
+            "(0, 0, 'XY209', 'Gym Badge', 'Pokémon League (Evolutions 7 Season; 2016-2017 Cycle)', 6, 1, 8), " +
+            "(0, 0, 'XY210', 'Gym Badge', 'Pokémon League (Evolutions 8 Season; 2016-2017 Cycle)', 6, 1, 8), " +
+            "(0, 0, 'XY211', 'Lucario Spirit Link', 'Mega Powers Collection', 6, 5, 8);";
+
+
 }

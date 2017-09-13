@@ -40,6 +40,7 @@ public class TCGDBHelper  extends SQLiteOpenHelper {
         db.execSQL(Card.POPULATE_TABLE_C3);
         db.execSQL(Card.POPULATE_TABLE_C4);
         db.execSQL(Card.POPULATE_TABLE_C5);
+        db.execSQL(Card.POPULATE_TABLE_C6);
         //...
         //db.execSQL(Card.POPULATE_TABLE_CN);
 

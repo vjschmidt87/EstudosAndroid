@@ -4,15 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="60dp"
     android:layout_gravity="center_vertical"
     android:layout_weight="1">
 
     <CheckBox
         android:id="@+id/check_own"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/check_own"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:layout_marginLeft="2dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBaseline_toBaselineOf="@+id/card_number" />
@@ -20,73 +20,62 @@
     <CheckBox
         android:id="@+id/check_dmg"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/check_dmg"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/check_own"
         android:layout_toEndOf="@+id/check_own"
         app:layout_constraintLeft_toRightOf="@+id/check_own"
-        android:layout_marginLeft="0dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/card_number" />
 
     <TextView
         android:id="@+id/card_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:layout_height="0dp"
+        android:visibility="gone"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/card_number"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
+        android:layout_width="52dp"
+        android:layout_height="match_parent"
         android:textSize="10dp"
         android:gravity="center_vertical"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:layout_below="@+id/card_id"
         android:layout_toLeftOf="@+id/card_name"
         android:layout_toStartOf="@+id/card_name"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintRight_toLeftOf="@+id/card_name"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toRightOf="@+id/check_dmg"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintTop_toTopOf="parent"
-
-        android:text="HGSS01"/>
+        android:text="HGSS01"
+        android:layout_marginStart="8dp" />
 
     <TextView
         android:id="@+id/card_name"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_width="190dp"
+        android:layout_height="match_parent"
         android:textSize="12dp"
         android:gravity="center_vertical"
-        android:paddingLeft="5dp"
-        android:paddingRight="0dp"
-        android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/card_type"
         android:layout_toStartOf="@+id/card_type"
-        android:layout_marginLeft="7dp"
+        android:layout_marginLeft="6dp"
         app:layout_constraintLeft_toRightOf="@+id/card_number"
-        app:layout_constraintRight_toLeftOf="@+id/card_type"
-        app:layout_constraintBaseline_toBaselineOf="@+id/card_number"
         android:text="Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card" />
 
     <TextView
         android:id="@+id/card_type"
         android:layout_width="20dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:paddingLeft="2dp"
-        android:paddingRight="0dp"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/card_rarity"
         android:layout_toStartOf="@+id/card_rarity"
         android:layout_marginRight="4dp"
         app:layout_constraintRight_toLeftOf="@+id/card_rarity"
         app:layout_constraintBaseline_toBaselineOf="@+id/card_number"
-        android:text="T"/>
+        android:text="T" />
 
     <ImageView
         android:id="@+id/card_rarity"
@@ -96,11 +85,11 @@
         android:paddingLeft="1dp"
         android:paddingRight="1dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
         android:layout_marginRight="1dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher" />
 
 </android.support.constraint.ConstraintLayout>
 

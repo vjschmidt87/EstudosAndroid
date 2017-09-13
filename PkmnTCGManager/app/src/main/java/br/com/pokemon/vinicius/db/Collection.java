@@ -97,7 +97,7 @@ public class Collection implements Parcelable, BaseColumns {
             "(56, 'DP Black Star Promos', 4, 1), " +
             "(25, 'HGSS Black Star Promos', 4, 1), " +
             "(101, 'BW Black Star Promos', 5, 1), " +
-            "(210, 'XY Black Star Promos', 6, 1), " +
+            "(211, 'XY Black Star Promos', 6, 1), " +
             "(28, 'SM Black Star Promos', 7, 1), " +
             "(12, 'McDonalds 2011', 6, 1), " +
             "(12, 'McDonalds 2012', 6, 1), " +

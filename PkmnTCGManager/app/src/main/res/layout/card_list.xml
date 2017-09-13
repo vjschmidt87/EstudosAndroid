@@ -1,33 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/collection_status"
-        android:layout_width="match_parent"
+        android:layout_width="367dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center_vertical"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
-        android:text="Coleção nome, total cartas coleção, total cartas possui, total danificadas" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/check_own_h"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:text="@string/check_own"
+        android:textSize="10dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/collection_status"/>
+
+    <TextView
+        android:id="@+id/check_dmg_h"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:text="@string/check_dmg"
+        android:textSize="10dp"
+        android:layout_marginLeft="12dp"
+        app:layout_constraintLeft_toRightOf="@+id/check_own_h"
+        app:layout_constraintTop_toBottomOf="@+id/collection_status" />
+
+    <TextView
+        android:id="@+id/card_number_h"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:text="Number"
+        android:textSize="10dp"
+        android:layout_marginLeft="12dp"
+        app:layout_constraintLeft_toRightOf="@+id/check_dmg_h"
+        app:layout_constraintTop_toBottomOf="@+id/collection_status" />
+
+    <TextView
+        android:id="@+id/card_name_h"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:text="Card name"
+        android:textSize="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/card_number_h"
+        app:layout_constraintTop_toBottomOf="@+id/collection_status" />
+
+    <TextView
+        android:id="@+id/card_type_h"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:text="Type"
+        android:textSize="10dp"
+        android:layout_marginRight="6dp"
+        app:layout_constraintRight_toLeftOf="@+id/card_rarity_h"
+        app:layout_constraintTop_toBottomOf="@+id/collection_status" />
+
+    <TextView
+        android:id="@+id/card_rarity_h"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:text="Rarity"
+        android:textSize="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/collection_status" />
 
     <ListView
         android:id="@+id/card_list"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:descendantFocusability="blocksDescendants"
-        android:layout_below="@+id/collection_status"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        app:layout_constraintTop_toBottomOf="@+id/card_type_h"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

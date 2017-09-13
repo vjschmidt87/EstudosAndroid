@@ -39,5 +39,6 @@ public class Type implements BaseColumns {
             "('Dark'), " +
             "('Metal'), " +
             "('Dragon'), " +
-            "('Fairy');";
+            "('Fairy'), " +
+            "('Dual');";
 }

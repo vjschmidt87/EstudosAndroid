@@ -24,7 +24,7 @@ import br.com.pokemon.vinicius.db.TCGDBHelper;
 public class CollectionFragment extends ListFragment {
     private static final String TAG = "CollectionFragment";
     OnCollectionSelectedListener mCallback;
-    ArrayList<Collection> collectionList;
+    public static ArrayList<Collection> collectionList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,6 @@ public class CollectionFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         mCallback.onCollectionSelected(position);
-        CardFragment.selectedCollection = (Collection)l.getItemAtPosition(position);
 
         getListView().setItemChecked(position, true);
     }
